@@ -1,0 +1,48 @@
+/* Basic styling for the page */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Styling for product items */
+.product {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+    position: relative;
+}
+
+/* Styling for cart */
+#cart {
+    list-style-type: none;
+    padding: 0;
+}
+
+#cart li {
+    margin-bottom: 5px;
+}
+
+/* Styling for buttons */
+button {
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Styling for cart summary */
+.cart-summary {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
