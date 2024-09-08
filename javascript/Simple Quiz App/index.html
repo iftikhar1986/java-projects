@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .options {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Quiz App</h1>
+
+  <!-- Display the quiz question -->
+  <div id="quiz-container">
+    <div class="question" id="question"></div>
+
+    <!-- Display answer options -->
+    <div class="options" id="options"></div>
+
+    <!-- Button to submit an answer -->
+    <button onclick="submitAnswer()">Submit Answer</button>
+
+    <!-- Display feedback after each question -->
+    <p id="feedback"></p>
+  </div>
+
+  <!-- Display final score -->
+  <div id="final-score" style="display:none;">
+    <h2>Your Final Score: <span id="score"></span></h2>
+    <button onclick="restartQuiz()">Restart Quiz</button>
+  </div>
+
+  <script src="quiz.js"></script>
+</body>
+</html>
