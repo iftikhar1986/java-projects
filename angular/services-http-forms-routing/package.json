@@ -1,5 +1,5 @@
 {
-  "name": "newstandalone",
+  "name": "services-http-forms-routing",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,17 +7,15 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:newstandalone": "node dist/newstandalone/server/server.mjs"
+    "serve:ssr:services-http-forms-routing": "node dist/services-http-forms-routing/server/server.mjs"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "^18.2.0",
-    "@angular/cdk": "^18.2.4",
     "@angular/common": "^18.2.0",
     "@angular/compiler": "^18.2.0",
     "@angular/core": "^18.2.0",
     "@angular/forms": "^18.2.0",
-    "@angular/material": "^18.2.4",
     "@angular/platform-browser": "^18.2.0",
     "@angular/platform-browser-dynamic": "^18.2.0",
     "@angular/platform-server": "^18.2.0",

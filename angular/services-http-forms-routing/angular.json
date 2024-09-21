@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "newstandalone": {
+    "services-http-forms-routing": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/newstandalone",
+            "outputPath": "dist/services-http-forms-routing",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -27,7 +27,6 @@
               }
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.css"
             ],
             "scripts": [],
@@ -65,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "newstandalone:build:production"
+              "buildTarget": "services-http-forms-routing:build:production"
             },
             "development": {
-              "buildTarget": "newstandalone:build:development"
+              "buildTarget": "services-http-forms-routing:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -91,7 +90,6 @@
               }
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -101,6 +99,6 @@
     }
   },
   "cli": {
-    "analytics": "13aed181-3a45-4ff3-9dc9-b10372166cb9"
+    "analytics": "12fd2a8f-1c71-4da7-ace8-ef01bb27fea1"
   }
 }
