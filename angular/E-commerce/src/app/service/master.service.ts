@@ -5,5 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class MasterService {
 
+  apiUrl:string = 'https://freeapi.miniprojectideas.com/api/BigBasket';
+
   constructor() { }
 }
