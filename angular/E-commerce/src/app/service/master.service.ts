@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { APIResponseModel } from '../model/Product';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +12,7 @@ export class MasterService {
 
   constructor(private http: HttpClient) { }
 
-  getAllProducts() {
-    return this.http.get(this.apiUrl + "GetAllProducts");
+  getAllProducts():Observable<APIResponseModel> {
+    return this.http.get<APIResponseModel>(this.apiUrl + "GetAllProducts");
   }
 }

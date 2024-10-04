@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit, signal  } from '@angular/core';
+import { MasterService } from '../../service/master.service';
+import { APIResponseModel, ProductList } from '../../model/Product';
 
 @Component({
   selector: 'app-products',
@@ -7,6 +9,22 @@ import { Component } from '@angular/core';
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })
-export class ProductsComponent {
+export class ProductsComponent implements OnInit {
+
+
+  //productList : ProductList[] = [];  
+
+  productList = signal<ProductList[]>([]); 
+
+  masterService = inject(MasterService);
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
+   
+  loadAllProducts() {
+    this.masterService.getAllProducts().subscribe((res:APIResponseModel)=>{
+        this.productList.set(res.data);
+    }); 
+  }
 
 }
