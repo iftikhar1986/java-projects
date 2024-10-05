@@ -18,7 +18,7 @@ export class ProductsComponent implements OnInit {
 
   masterService = inject(MasterService);
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.loadAllProducts();
   }
    
   loadAllProducts() {

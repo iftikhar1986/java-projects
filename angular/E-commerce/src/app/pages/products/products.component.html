@@ -1,1 +1,25 @@
-<p>products works!</p>
+
+
+
+<div class="contanier">
+    <div class="row">
+        @for (item of productList(); track $index) {
+            <div class="col-3">
+                <div class="card product-card">
+                    <img [src]="item.productImageUrl " class="card-img-top product-image" alt="Product Image">
+                    <span class="category-badge">{{item.categoryName}}</span>
+                    <div class="card-body">
+                        <h5 class="card-title">{{item.productName }} Name</h5> 
+                        <p class="product-price">${{item.productPrice}}</p>
+                        <button class="btn add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        }
+       
+    </div>
+</div>
+
+
+
+
