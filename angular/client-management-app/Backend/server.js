@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
+
 const app = express();
 const port = 3000;
 
@@ -49,23 +50,29 @@ app.get('/clients', (req, res) => {
   });
   
   // Add a new client
-  app.post('/clients', (req, res) => {
-    const { name, email, phone } = req.body;
-    db.query('INSERT INTO clients (name, email, phone) VALUES (?, ?, ?)', [name, email, phone], (err, results) => {
-      if (err) throw err;
-      res.status(201).json({ message: 'Client added', clientId: results.insertId });
-    });
+  // Add a new client
+app.post('/clients', (req, res) => {
+  const { name, email, address, password } = req.body;
+  db.query('INSERT INTO clients (name, email, address, password) VALUES (?, ?, ?, ?)', 
+  [name, email, address, password], 
+  (err, results) => {
+    if (err) throw err;
+    res.status(201).json({ message: 'Client added', clientId: results.insertId });
   });
+});
   
   // Update a client
-  app.put('/clients/:id', (req, res) => {
-    const { id } = req.params;
-    const { name, email, phone } = req.body;
-    db.query('UPDATE clients SET name = ?, email = ?, phone = ? WHERE id = ?', [name, email, phone, id], (err, results) => {
-      if (err) throw err;
-      res.json({ message: 'Client updated' });
-    });
+ // Update a client
+app.put('/clients/:id', (req, res) => {
+  const { id } = req.params;
+  const { name, email, address } = req.body;
+  db.query('UPDATE clients SET name = ?, email = ?, address = ? WHERE id = ?', 
+  [name, email, address, id], 
+  (err, results) => {
+    if (err) throw err;
+    res.json({ message: 'Client updated' });
   });
+});
   
   // Delete a client
   app.delete('/clients/:id', (req, res) => {
@@ -77,8 +84,9 @@ app.get('/clients', (req, res) => {
   });
 
   // Get all meetings
-app.get('/meetings', (req, res) => {
-    db.query('SELECT meetings.*, clients.name AS clientName FROM meetings JOIN clients ON meetings.client_id = clients.id', (err, results) => {
+  app.get('/meetings', (req, res) => {
+    db.query('SELECT meetings.*, clients.name AS clientName FROM meetings JOIN clients ON meetings.client_id = clients.id', 
+    (err, results) => {
       if (err) throw err;
       res.json(results);
     });
@@ -86,8 +94,10 @@ app.get('/meetings', (req, res) => {
   
   // Schedule a new meeting
   app.post('/meetings', (req, res) => {
-    const { client_id, date, agenda } = req.body;
-    db.query('INSERT INTO meetings (client_id, date, agenda) VALUES (?, ?, ?)', [client_id, date, agenda], (err, results) => {
+    const { client_id, topic, number_of_people, start_time } = req.body;
+    db.query('INSERT INTO meetings (client_id, topic, number_of_people, start_time) VALUES (?, ?, ?, ?)', 
+    [client_id, topic, number_of_people, start_time], 
+    (err, results) => {
       if (err) throw err;
       res.status(201).json({ message: 'Meeting scheduled', meetingId: results.insertId });
     });
@@ -96,8 +106,10 @@ app.get('/meetings', (req, res) => {
   // Update a meeting
   app.put('/meetings/:id', (req, res) => {
     const { id } = req.params;
-    const { date, agenda } = req.body;
-    db.query('UPDATE meetings SET date = ?, agenda = ? WHERE id = ?', [date, agenda, id], (err, results) => {
+    const { topic, number_of_people, start_time } = req.body;
+    db.query('UPDATE meetings SET topic = ?, number_of_people = ?, start_time = ? WHERE id = ?', 
+    [topic, number_of_people, start_time, id], 
+    (err, results) => {
       if (err) throw err;
       res.json({ message: 'Meeting updated' });
     });

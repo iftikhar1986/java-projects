@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "client-meeting-management-app": {
+    "client-meeting-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/client-meeting-management-app",
+            "outputPath": "dist/client-meeting-app",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -28,7 +28,7 @@
             ],
             "styles": [
               "src/styles.css",
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
 
             ],
             "scripts": [],
@@ -66,10 +66,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "client-meeting-management-app:build:production"
+              "buildTarget": "client-meeting-app:build:production"
             },
             "development": {
-              "buildTarget": "client-meeting-management-app:build:development"
+              "buildTarget": "client-meeting-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -101,6 +101,6 @@
     }
   },
   "cli": {
-    "analytics": "35436177-51ce-48d7-a670-591b4fb28fc1"
+    "analytics": "b2acb0d3-a17f-48a1-ba14-f7846f0dab0c"
   }
 }

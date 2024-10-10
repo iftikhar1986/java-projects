@@ -1,0 +1,42 @@
+<div class="card shadow mt-4">
+  <div class="card-body">
+    <h2 class="card-title text-center">Schedule a Meeting</h2>
+    <form (submit)="scheduleMeeting()" class="needs-validation" novalidate>
+      <div class="mb-3">
+        <label for="meetingTopic" class="form-label">Meeting Topic</label>
+        <input
+          type="text"
+          id="meetingTopic"
+          [(ngModel)]="meetingTopic"
+          name="meetingTopic"
+          class="form-control"
+          placeholder="Enter Meeting Topic"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="numberOfPeople" class="form-label">Number of People</label>
+        <input
+          type="number"
+          id="numberOfPeople"
+          [(ngModel)]="numberOfPeople"
+          name="numberOfPeople"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="startTime" class="form-label">Start Time</label>
+        <input
+          type="datetime-local"
+          id="startTime"
+          [(ngModel)]="startTime"
+          name="startTime"
+          class="form-control"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-success w-100">Schedule Meeting</button>
+    </form>
+  </div>
+</div>

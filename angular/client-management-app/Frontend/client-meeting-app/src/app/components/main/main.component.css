@@ -1,0 +1,35 @@
+.container {
+  background-color: #f8f9fa; /* Light background color for the container */
+  border-radius: 1rem; /* Rounded corners for the container */
+  padding: 20px; /* Add some padding */
+}
+
+.card {
+  border-radius: 1rem; /* Rounded corners for cards */
+  transition: transform 0.2s; /* Smooth hover effect */
+}
+
+.card:hover {
+  transform: scale(1.02); /* Scale effect on hover */
+}
+
+.card-title {
+  font-weight: bold; /* Bold title text */
+  font-size: 1.5rem; /* Larger title text */
+}
+
+.display-4 {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow for title */
+}
+
+.text-primary {
+  color: #007bff; /* Primary color for title */
+}
+
+.text-success {
+  color: #28a745; /* Success color for client card title */
+}
+
+.text-info {
+  color: #17a2b8; /* Info color for meeting card title */
+}
