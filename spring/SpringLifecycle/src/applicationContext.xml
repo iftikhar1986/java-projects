@@ -3,9 +3,9 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- Bean definition with custom init and destroy methods -->
-    <bean id="myBean" class="com.example.MyBean" init-method="initMethod" destroy-method="destroyMethod">
-        <property name="message" value="Hello from Spring Lifecycle!" />
+    <!-- Define the Printer bean with custom init and destroy methods -->
+    <bean id="printer" class="com.example.Printer" init-method="connectPrinter" destroy-method="disconnectPrinter">
+        <property name="printerName" value="HP LaserJet" />
     </bean>
 
 </beans>
