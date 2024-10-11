@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Define the Engine bean and inject the engine type using the constructor -->
+    <bean id="engine" class="com.example.ioc.Engine">
+        <!-- This constructor-arg injects the type of the engine into the Engine bean -->
+        <constructor-arg value="V8" />
+    </bean>
+
+    <!-- Define the Car bean and inject the Engine bean using constructor-based injection -->
+    <bean id="car" class="com.example.ioc.Car">
+        <!-- This constructor-arg injects the Engine bean (created above) into the Car -->
+        <constructor-arg ref="engine" />
+    </bean>
+
+</beans>

@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class SpringBeanTest {
 
-    public static void main(String[] args) {
+    public static void main(String[] args)throws Exception {
         // Load the Spring application context from the XML configuration file
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
