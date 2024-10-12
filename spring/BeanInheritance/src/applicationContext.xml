@@ -1,0 +1,18 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Parent bean for generic vehicle configuration -->
+    <bean id="vehicle" abstract="true">
+        <property name="engineType" value="V6" />
+        <property name="wheels" value="4" />
+    </bean>
+
+    <!-- Child bean that inherits from the 'vehicle' bean and adds more details -->
+    <bean id="car" parent="vehicle">
+        <property name="carBrand" value="Toyota" />
+        <property name="carModel" value="Corolla" />
+    </bean>
+
+</beans>
