@@ -10,3 +10,4 @@
 
     <!-- BeanPostProcessor is automatically detected because of @Component -->
 </beans>
+ 
